@@ -22,7 +22,8 @@ const FEATURES = [
   {
     icon: "🌾",
     title: "Farm Produce",
-    desc: "Track fresh produce from farm to table with full traceability and quality assurance.",
+    path: "/farm-produce",   // ✅ add this
+    desc: "Track fresh produce...",
     bg: "rgba(251,191,36,0.10)",
     border: "rgba(251,191,36,0.3)",
     accent: "#d97706",
@@ -30,7 +31,8 @@ const FEATURES = [
   {
     icon: "🚛",
     title: "Supply Tracking",
-    desc: "Real-time shipment monitoring with GPS-enabled blockchain records for every delivery.",
+    path: "/supply-tracking", // ✅ add this
+    desc: "Real-time shipment...",
     bg: "rgba(16,185,129,0.10)",
     border: "rgba(16,185,129,0.3)",
     accent: "#059669",
@@ -39,7 +41,8 @@ const FEATURES = [
   {
     icon: "📋",
     title: "Smart Contracts",
-    desc: "Automate payments and agreements between farmers, distributors, and buyers securely.",
+    path: "/smart-contracts",
+    desc: "Automate payments...",
     bg: "rgba(59,130,246,0.10)",
     border: "rgba(59,130,246,0.3)",
     accent: "#2563eb",
@@ -47,7 +50,8 @@ const FEATURES = [
   {
     icon: "📊",
     title: "Market Insights",
-    desc: "Live pricing data, demand forecasts, and analytics to maximize your crop value.",
+    path: "/market-insights",
+    desc: "Live pricing data...",
     bg: "rgba(249,115,22,0.10)",
     border: "rgba(249,115,22,0.3)",
     accent: "#ea580c",
@@ -142,6 +146,7 @@ export default function AgriWebHomePage() {
         }}
           onMouseEnter={e => { e.target.style.transform = "translateY(-1px)"; e.target.style.boxShadow = "0 6px 18px rgba(26,92,42,0.4)"; }}
           onMouseLeave={e => { e.target.style.transform = ""; e.target.style.boxShadow = "0 4px 12px rgba(26,92,42,0.3)"; }}
+          onClick={()=>navigate("/getstarted")}
         >
           Get Started →
         </button>
@@ -284,6 +289,7 @@ export default function AgriWebHomePage() {
               cursor: "pointer",
               transform: f.featured ? "translateY(-6px)" : "none",
             }}
+              onClick={() => navigate(f.path)}
               onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = f.featured ? "0 16px 48px rgba(26,92,42,0.4)" : "0 8px 30px rgba(0,0,0,0.1)"; }}
               onMouseLeave={e => { e.currentTarget.style.transform = f.featured ? "translateY(-6px)" : "none"; e.currentTarget.style.boxShadow = f.featured ? "0 12px 40px rgba(26,92,42,0.3)" : "0 2px 12px rgba(0,0,0,0.04)"; }}
             >
