@@ -252,7 +252,7 @@ export default function SmartContractsPage() {
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <span style={{ fontSize: "2rem" }}>🌿</span>
           <div>
-            <div style={{ fontWeight: 700, fontSize: "1.1rem", color: "#1a3d1f", letterSpacing: "-0.3px" }}>AgriChain</div>
+            <div style={{ fontWeight: 700, fontSize: "1.1rem", color: "#1a3d1f", letterSpacing: "-0.3px" }}>AgroChain</div>
             <div style={{ fontSize: "0.62rem", color: "#1a3d1f", letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.7 }}>Blockchain Supply</div>
           </div>
         </div>
