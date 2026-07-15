@@ -7,6 +7,8 @@ import MarketInsightsPage from "./pages/MarkitingInsight.Page";
 import RegistrationPage from "./pages/Registration.Page";
 import RoleSelection from "./pages/Roles.Page";
 import AboutPage from "./pages/About.page";
+import AgroChainLoadingPage from "./components/Ui/Home_Page_Loader";
+import AgroChainDemoPage from "./pages/Demo_Video.jsx";
 function App() {
   return (
     <Routes>
@@ -18,6 +20,7 @@ function App() {
       <Route path="/registration" element={<RegistrationPage />} />
       <Route path="/getstarted" element={<RoleSelection />} />
        <Route path="/about" element={<AboutPage />} />
+        <Route path="/demovideo" element={<AgroChainDemoPage />} />
     </Routes>
   );
 }

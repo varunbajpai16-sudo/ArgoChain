@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import AgroChainLoadingPage from "../components/Ui/Home_Page_Loader";
 import { useLocation } from "react-router-dom";
 const NAV_LINKS = [
   { name: "Home", path: "/" },
@@ -70,7 +71,8 @@ const CONTRACTS = [
 ];
 
 export default function AgriWebHomePage() {
-      const navigate = useNavigate();
+const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
   const location = useLocation();
    const getActiveNav = () => {
   if (location.pathname === "/") return "Home";
@@ -88,6 +90,20 @@ export default function AgriWebHomePage() {
     return () => clearInterval(t);
   }, []);
 
+    useEffect(() => {
+    if (!loading) return;
+
+    const timer = setTimeout(() => {
+      sessionStorage.setItem("homepageLoaded", "true");
+      setLoading(false);
+    }, 4200);
+
+    return () => clearTimeout(timer);
+  }, [loading]);
+
+  if(loading){
+    return <AgroChainLoadingPage />;
+  }
   return (
     <div style={{ minHeight: "100vh", background: "#f7f3ec", fontFamily: "'Palatino Linotype', Georgia, serif", color: "#1c1a14" }}>
 
